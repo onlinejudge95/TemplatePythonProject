@@ -1,14 +1,21 @@
 [tool.poetry]
 name = "template-python-project"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Template python project using poetry"
+authors = ["Mayank Pathak <onlinejudge95@gmail.com>"]
 readme = "README.md"
 packages = [{include = "template_python_project", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "0.6.7"
+mypy = "1.11.2"
+pytest = "8.3.3"
+pytest-cov = "5.0.0"
+pytest-mock = "3.14.0"
+pytest-asyncio = "0.24.0"
 
 [build-system]
 requires = ["poetry-core"]
