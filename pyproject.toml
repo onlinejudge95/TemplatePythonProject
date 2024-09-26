@@ -17,6 +17,19 @@ pytest-cov = "5.0.0"
 pytest-mock = "3.14.0"
 pytest-asyncio = "0.24.0"
 
+[tool.ruff]
+include = ["*.py"]
+line-length = 120
+output-format = "grouped"
+respect-gitignore = true
+src = ["src"]
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "native"
+quote-style = "double"
+skip-magic-trailing-comma = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
