@@ -43,6 +43,21 @@ color_output = true
 error_summary = true
 html_report = "./reports/mypy/"
 
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = 0
+precision = 2
+
+[tool.pytest.ini_options]
+addopts = "--cov-config pyproject.toml --cov src/template_python_project --cov-report html:reports/pytest --cov-report xml:reports/coverage.xml --cov-report term-missing"
+console_output_style = "progress"
+required_plugins = "pytest-cov pytest-mock pytest-asyncio"
+tmp_path_retention_policy = "none"
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
