@@ -31,7 +31,7 @@ quote-style = "double"
 skip-magic-trailing-comma = true
 
 [tool.mypy]
-files = "**/*.py"
+files = "src/**/*.py"
 disallow_any_unimported = true
 disallow_untyped_calls = true
 disallow_untyped_defs = true
