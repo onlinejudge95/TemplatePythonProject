@@ -1,14 +1,62 @@
 [tool.poetry]
 name = "template-python-project"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Template python project using poetry"
+authors = ["Mayank Pathak <onlinejudge95@gmail.com>"]
 readme = "README.md"
 packages = [{include = "template_python_project", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "0.6.7"
+mypy = {extras = ["reports"], version = "1.11.2"}
+pytest = "8.3.3"
+pytest-cov = "5.0.0"
+pytest-mock = "3.14.0"
+pytest-asyncio = "0.24.0"
+
+[tool.ruff]
+include = ["*.py"]
+line-length = 120
+output-format = "grouped"
+respect-gitignore = true
+src = ["src"]
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "native"
+quote-style = "double"
+skip-magic-trailing-comma = true
+
+[tool.mypy]
+files = "**/*.py"
+disallow_any_unimported = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+allow_untyped_globals = false
+allow_redefinition = false
+show_error_context = true
+pretty = true
+color_output = true
+error_summary = true
+html_report = "./reports/mypy/"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = 0
+precision = 2
+
+[tool.pytest.ini_options]
+addopts = "--cov-config pyproject.toml --cov src/template_python_project --cov-report html:reports/pytest --cov-report xml:reports/coverage.xml --cov-report term-missing"
+console_output_style = "progress"
+required_plugins = "pytest-cov pytest-mock pytest-asyncio"
+tmp_path_retention_policy = "none"
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"
 
 [build-system]
 requires = ["poetry-core"]
