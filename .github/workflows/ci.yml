@@ -21,7 +21,7 @@ jobs:
       - name: Install poetry
         run: pipx install poetry
       - name: Setup Python
-        uses: actions/setup-python@v5.2.0
+        uses: actions/setup-python@v5.3.0
         with:
           python-version-file: "pyproject.toml"
           cache: "poetry"
@@ -45,7 +45,7 @@ jobs:
       - name: Install poetry
         run: pipx install poetry
       - name: Setup Python
-        uses: actions/setup-python@v5.2.0
+        uses: actions/setup-python@v5.3.0
         with:
           python-version-file: "pyproject.toml"
           cache: "poetry"
@@ -67,7 +67,7 @@ jobs:
       - name: Install poetry
         run: pipx install poetry
       - name: Setup Python
-        uses: actions/setup-python@v5.2.0
+        uses: actions/setup-python@v5.3.0
         with:
           cache: "poetry"
           python-version-file: "pyproject.toml"
