@@ -10,7 +10,7 @@ packages = [{include = "template_python_project", from = "src"}]
 python = "^3.12"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "0.9.4"
+ruff = "0.9.6"
 mypy = {extras = ["reports"], version = "1.14.1"}
 pytest = "8.3.4"
 pytest-cov = "6.0.0"
